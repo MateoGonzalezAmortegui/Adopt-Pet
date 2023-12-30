@@ -29,7 +29,7 @@ export const Navbar = () => {
 
     const links = [
         { href: "/", text: "HOME" },
-        { href: "/pets", text: "PELUDITOS" },
+        { href: "/pets/all", text: "PELUDITOS" },
         { href: "/maps", text: "CERCA TUYO" },
     ]
 
@@ -52,7 +52,7 @@ export const Navbar = () => {
                     <section className="navbar-center space-x-2">
                         <article>
                             <Link
-                                href="/pets"
+                                href="/pets/all"
                                 className="btn btn-outline btn-secondary "
                             >
                                 <CatIcon className="iconBg" />
