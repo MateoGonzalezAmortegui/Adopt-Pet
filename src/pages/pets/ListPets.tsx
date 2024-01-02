@@ -29,6 +29,7 @@ export const ListPets = async ({
                     <CardsPets
                         petInfo={pet}
                         key={index}
+                        id={index}
                     />
                 ))}
             </section>

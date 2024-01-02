@@ -15,7 +15,7 @@ export const ButtonSecondary: React.FC<ButtonProps> = ({
 }) => {
     return (
         <button
-            className={`btn btn-outline btn-secondary dark:btn-ghost ${className}`}
+            className={`btn btn-outline btn-secondary  ${className}`}
             onClick={onClick}
         >
             {text}

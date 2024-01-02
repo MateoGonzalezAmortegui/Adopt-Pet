@@ -16,7 +16,7 @@ import { DogIcon } from "@/components/icons/Dog"
 
 export const Search = () => {
     const router = useRouter()
-    console.log(router)
+
     const [inputValue, setInputValue] = useState("")
 
     const handleInputChange = (value: string) => {

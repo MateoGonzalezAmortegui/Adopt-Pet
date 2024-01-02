@@ -1,4 +1,3 @@
-import { SubTittle } from "@/components/UI/texts"
 import { LoadingCard } from "@/components/common/skeletons"
 import { ListPets } from "@/pages/pets/ListPets"
 import { Search } from "@/pages/pets/Search"
@@ -23,7 +22,7 @@ export default function page({ params, searchParams }: UrlProps) {
     }
 
     return (
-        <section className="w-full dark:bg-gray-700">
+        <section className="w-full dark:bg-neutral">
             <article className=" pt-3 w-11/12 my-0 mx-auto">
                 <Search />
 

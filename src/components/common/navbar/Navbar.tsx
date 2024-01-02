@@ -100,7 +100,7 @@ export const Navbar = () => {
                                 href="/profile"
                                 className="btn btn-outline rounded-full "
                             >
-                                <ProfileIcon />
+                                <ProfileIcon className="iconBg" />
                             </Link>
                         </article>
                     </section>
@@ -118,7 +118,10 @@ export const Navbar = () => {
                         {links.map((link) => (
                             <article key={link.text}>
                                 <Link href={link.href}>
-                                    <ButtonSecondary text={link.text} />
+                                    <ButtonSecondary
+                                        text={link.text}
+                                        className="dark:btn-ghost"
+                                    />
                                 </Link>
                             </article>
                         ))}

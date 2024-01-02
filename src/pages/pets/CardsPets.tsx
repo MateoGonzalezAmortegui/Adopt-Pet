@@ -1,3 +1,4 @@
+"use client"
 //* Interfaces
 import { PetsDto } from "@/interfaces/pets"
 
@@ -5,12 +6,27 @@ import { PetsDto } from "@/interfaces/pets"
 import { Paragraph, SubTittle } from "@/components/UI/texts"
 
 import Image from "next/image"
+import { ModalPet } from "@/components/common/modals/ModalPet"
 
-export const CardsPets = ({ petInfo }: { petInfo: PetsDto }) => {
+export const CardsPets = ({
+    petInfo,
+    id,
+}: {
+    petInfo: PetsDto
+    id: number
+}) => {
+    const infoPet = (index: number) => {
+        const modal = `modal_${index}`
+        document.getElementById(modal).showModal()
+    }
+
     return (
         <section>
             <article>
-                <div className="card bg-base-100 shadow-xl shadow-gray-400 cursor-pointer hover:shadow-primary dark:bg-black  ">
+                <div
+                    className="card bg-base-100 shadow-xl shadow-gray-400 cursor-pointer hover:shadow-primary dark:bg-black  "
+                    onClick={() => infoPet(id)}
+                >
                     <figure>
                         <Image
                             src={petInfo.images[0].secure_url}
@@ -66,6 +82,10 @@ export const CardsPets = ({ petInfo }: { petInfo: PetsDto }) => {
                     </div>
                 </div>
             </article>
+            <ModalPet
+                petInfo={petInfo}
+                id={id}
+            />
         </section>
     )
 }

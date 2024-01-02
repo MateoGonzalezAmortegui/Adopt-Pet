@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 .iconBg {
-    @apply fill-current dark:text-black
+    @apply fill-current dark:text-white
 }
