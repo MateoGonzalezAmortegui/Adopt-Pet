@@ -3,7 +3,7 @@
 import { Marker } from "@react-google-maps/api"
 
 //* interfaces
-import { PetsDto } from "@/interfaces/pets"
+import { PetsDto } from "@/interfaces/PetsDto"
 
 //* components
 import { ModalPet } from "@/components/common/modals/ModalPet"

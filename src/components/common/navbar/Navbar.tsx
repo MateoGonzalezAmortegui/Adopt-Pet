@@ -14,7 +14,12 @@ import { ButtonSecondary } from "@/components/UI/buttons"
 //* texts
 import { Tittle } from "@/components/UI/texts"
 
+//* Auth
+import { signIn, signOut, useSession } from "next-auth/react"
+
 export const Navbar = () => {
+    const { data: session } = useSession()
+
     const [theme, setTheme] = useState<"light" | "dark">("light")
 
     const handleTheme = () => {
@@ -96,12 +101,54 @@ export const Navbar = () => {
 
                     <section className="navbar-end">
                         <article>
-                            <Link
-                                href="/profile"
-                                className="btn btn-outline rounded-full "
-                            >
-                                <ProfileIcon className="iconBg" />
-                            </Link>
+                            <div className="flex-none">
+                                <ul className="menu menu-horizontal px-1">
+                                    <li>
+                                        <details>
+                                            <summary>
+                                                <ProfileIcon className="iconBg" />
+                                            </summary>
+                                            <ul className="p-2 bg-base-100 rounded-t-none right-0 bottom-14 shadow-md shadow-neutral">
+                                                {session ? (
+                                                    <>
+                                                        <li>
+                                                            <Link href="/profile">
+                                                                Mi Perfil
+                                                            </Link>
+                                                        </li>
+
+                                                        <li
+                                                            onClick={() =>
+                                                                signOut()
+                                                            }
+                                                        >
+                                                            <a className="text-red-600">
+                                                                Salir
+                                                            </a>
+                                                        </li>
+                                                    </>
+                                                ) : (
+                                                    <>
+                                                        <li>
+                                                            <Link
+                                                                className="text-green-600"
+                                                                href="/sign-in"
+                                                            >
+                                                                Login
+                                                            </Link>
+                                                        </li>
+                                                        <li>
+                                                            <Link href="/sign-up">
+                                                                Registrate
+                                                            </Link>
+                                                        </li>
+                                                    </>
+                                                )}
+                                            </ul>
+                                        </details>
+                                    </li>
+                                </ul>
+                            </div>
                         </article>
                     </section>
                 </nav>
@@ -118,10 +165,9 @@ export const Navbar = () => {
                         {links.map((link) => (
                             <article key={link.text}>
                                 <Link href={link.href}>
-                                    <ButtonSecondary
-                                        text={link.text}
-                                        className="dark:btn-ghost"
-                                    />
+                                    <ButtonSecondary>
+                                        {link.text}
+                                    </ButtonSecondary>
                                 </Link>
                             </article>
                         ))}
@@ -155,12 +201,54 @@ export const Navbar = () => {
 
                     <section className="navbar-end">
                         <article>
-                            <Link
-                                href="/profile"
-                                className="btn btn-accent rounded-full dark:bg-secondary"
-                            >
-                                <ProfileIcon className="iconBg" />
-                            </Link>
+                            <div className="flex-none">
+                                <ul className="menu menu-horizontal px-1">
+                                    <li>
+                                        <details>
+                                            <summary>
+                                                <ProfileIcon className="iconBg" />
+                                            </summary>
+                                            <ul className="p-2 bg-base-100 rounded-t-none right-0 shadow-md shadow-neutral">
+                                                {session ? (
+                                                    <>
+                                                        <li>
+                                                            <Link href="/profile">
+                                                                Mi Perfil
+                                                            </Link>
+                                                        </li>
+
+                                                        <li
+                                                            onClick={() =>
+                                                                signOut()
+                                                            }
+                                                        >
+                                                            <a className="text-red-600">
+                                                                Salir
+                                                            </a>
+                                                        </li>
+                                                    </>
+                                                ) : (
+                                                    <>
+                                                        <li>
+                                                            <Link
+                                                                className="text-green-600"
+                                                                href="/sign-in"
+                                                            >
+                                                                Login
+                                                            </Link>
+                                                        </li>
+                                                        <li>
+                                                            <Link href="/sign-up">
+                                                                Registrate
+                                                            </Link>
+                                                        </li>
+                                                    </>
+                                                )}
+                                            </ul>
+                                        </details>
+                                    </li>
+                                </ul>
+                            </div>
                         </article>
                     </section>
                 </nav>

@@ -4,6 +4,7 @@ import "./globals.css"
 
 //* Components
 import { Navbar } from "@/components/common/navbar"
+import SessionAuthProvider from "@/context/SessionAuthProvider"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -20,8 +21,10 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={inter.className}>
-                <Navbar />
-                <main>{children}</main>
+                <SessionAuthProvider>
+                    <Navbar />
+                    <main>{children}</main>
+                </SessionAuthProvider>
             </body>
         </html>
     )

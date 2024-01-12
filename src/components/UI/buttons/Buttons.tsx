@@ -1,58 +1,62 @@
 import React from "react"
 
-interface ButtonProps {
-    onClick?: () => void
-    className?: string
-    children?: React.ReactNode
-    text?: string
+interface HtmlProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
+
+interface ButtonProps extends HtmlProps {
+    addClass?: string
 }
 
-export const ButtonSecondary: React.FC<ButtonProps> = ({
-    onClick,
-    className,
+export const ButtonSecondary = ({
     children,
-    text,
-}) => {
+    addClass,
+    ...props
+}: ButtonProps) => {
     return (
         <button
-            className={`btn btn-outline btn-secondary  ${className}`}
-            onClick={onClick}
+            className={`btn btn-outline btn-secondary ${addClass}`}
+            {...props}
         >
-            {text}
             {children}
         </button>
     )
 }
 
-export const ButtonPrimary: React.FC<ButtonProps> = ({
-    onClick,
-    className,
+export const ButtonPrimary = ({
     children,
-    text,
-}) => {
+    addClass,
+    ...props
+}: ButtonProps) => {
     return (
         <button
-            className={`btn  btn-primary ${className}`}
-            onClick={onClick}
+            className={`btn  btn-primary ${addClass}`}
+            {...props}
         >
-            {text}
             {children}
         </button>
     )
 }
 
-export const ButtonAccent: React.FC<ButtonProps> = ({
-    onClick,
-    className,
-    children,
-    text,
-}) => {
+export const ButtonAccent = ({ children, addClass, ...props }: ButtonProps) => {
     return (
         <button
-            className={`btn  btn-accent ${className}`}
-            onClick={onClick}
+            className={`btn btn-accent ${addClass}`}
+            {...props}
         >
-            {text}
+            {children}
+        </button>
+    )
+}
+
+export const ButtonWarning = ({
+    children,
+    addClass,
+    ...props
+}: ButtonProps) => {
+    return (
+        <button
+            className={`btn btn-warning ${addClass}`}
+            {...props}
+        >
             {children}
         </button>
     )

@@ -1,6 +1,6 @@
 import { getAllPets } from "@/services/pets/getAllPets"
 import { CardsPets } from "./CardsPets"
-import { PetsDto } from "@/interfaces/pets"
+import { PetsDto } from "@/interfaces/PetsDto"
 import { NotFoundPet } from "./NotFoundPet"
 
 export const ListPets = async ({

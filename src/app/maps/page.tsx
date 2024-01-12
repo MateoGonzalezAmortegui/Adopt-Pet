@@ -1,4 +1,4 @@
-import { PetsDto } from "@/interfaces/pets"
+import { PetsDto } from "@/interfaces/PetsDto"
 import { GoogleMapView } from "@/pages/maps/GoogleMapView"
 import { getAllPets } from "@/services/pets/getAllPets"
 

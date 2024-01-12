@@ -10,7 +10,7 @@ import { MarkerPets } from "./MarketPets"
 import { useEffect, useState } from "react"
 
 //* Interfaces
-import { PetsDto } from "@/interfaces/pets"
+import { PetsDto } from "@/interfaces/PetsDto"
 
 interface Location {
     lat: number

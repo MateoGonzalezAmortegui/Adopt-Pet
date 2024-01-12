@@ -1,6 +1,6 @@
 "use client"
 //* UI
-import { TextInput } from "@/components/UI/inputs"
+import { Input } from "@/components/UI/inputs"
 import { Paragraph, SubTittle } from "@/components/UI/texts"
 import { ButtonPrimary } from "@/components/UI/buttons"
 
@@ -19,7 +19,8 @@ export const Search = () => {
 
     const [inputValue, setInputValue] = useState("")
 
-    const handleInputChange = (value: string) => {
+    const handleInputChange = (e: any) => {
+        const value = e.target.value
         setInputValue(value)
         if (inputValue.length <= 1) {
             handleButtonAll()
@@ -43,7 +44,12 @@ export const Search = () => {
                 <SubTittle text="Encuentra a tu nuevo amigo!" />
                 <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-center">
                     <div className="flex space-x-4 pt-3 sm:flex-row">
-                        <TextInput onInputChange={handleInputChange} />
+                        <Input
+                            type="text"
+                            placeholder="Busca por su nombre"
+                            value={inputValue}
+                            onChange={() => handleInputChange}
+                        />
                         <ButtonPrimary onClick={handleButton}>
                             <SearchIcon className="iconBg" />
                         </ButtonPrimary>
@@ -53,21 +59,21 @@ export const Search = () => {
                         <Paragraph text="Busca por tipo de animal:" />
 
                         <ButtonAccent
-                            className="btn-outline"
+                            addClass="btn-outline"
                             onClick={() => handleButtonPet("Perro")}
                         >
                             <DogIcon className="iconBg" />
                         </ButtonAccent>
 
                         <ButtonSecondary
-                            className="btn-outline"
+                            addClass="btn-outline"
                             onClick={() => handleButtonPet("Gato")}
                         >
                             <CatIcon className="iconBg" />
                         </ButtonSecondary>
 
                         <ButtonPrimary
-                            className="btn-outline"
+                            addClass="btn-outline"
                             onClick={handleButtonAll}
                         >
                             <DogIcon className="iconBg" />

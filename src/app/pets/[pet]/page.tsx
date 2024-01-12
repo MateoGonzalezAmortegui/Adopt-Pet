@@ -22,7 +22,7 @@ export default function page({ params, searchParams }: UrlProps) {
     }
 
     return (
-        <section className="w-full dark:bg-neutral">
+        <section className="w-full dark:bg-neutral h-auto">
             <article className=" pt-3 w-11/12 my-0 mx-auto">
                 <Search />
 

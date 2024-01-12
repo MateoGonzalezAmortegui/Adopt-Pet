@@ -1,6 +1,6 @@
 "use client"
 //* Interfaces
-import { PetsDto } from "@/interfaces/pets"
+import { PetsDto } from "@/interfaces/PetsDto"
 
 //* UI
 import { Paragraph, SubTittle } from "@/components/UI/texts"
@@ -24,7 +24,7 @@ export const CardsPets = ({
         <section>
             <article>
                 <div
-                    className="card bg-base-100 shadow-xl shadow-gray-400 cursor-pointer hover:shadow-primary dark:bg-black  "
+                    className="card bg-base-100 shadow-xl shadow-gray-400 cursor-pointer hover:shadow-primary dark:bg-gray-700  "
                     onClick={() => infoPet(id)}
                 >
                     <figure>
@@ -59,15 +59,15 @@ export const CardsPets = ({
                             petInfo.vaccinations.name.map(
                                 (vaccinations, index) => (
                                     <ul key={index}>
-                                        <li className="text-sm">
-                                            {"* " + vaccinations}
+                                        <li className="text-sm dark:text-white">
+                                            {"· " + vaccinations}
                                         </li>
                                     </ul>
                                 )
                             )}
                         <div className="card-actions justify-end">
                             {petInfo.years == "0" ? (
-                                <div className="badge badge-outline">
+                                <div className="badge badge-outline dark:text-white dark:bg-primary">
                                     {`${petInfo.months} Meses`}
                                 </div>
                             ) : (
