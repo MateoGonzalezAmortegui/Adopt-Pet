@@ -18,7 +18,13 @@ export const MarkerPets = ({ pet, index }: { pet: PetsDto; index: number }) => {
 
     const infoPet = (index: number) => {
         const modal = `modal_${index}`
-        document.getElementById(modal).showModal()
+        const modalElement = document.getElementById(
+            modal
+        ) as HTMLDialogElement | null
+
+        if (modalElement) {
+            modalElement.showModal()
+        }
     }
 
     return (
@@ -30,7 +36,7 @@ export const MarkerPets = ({ pet, index }: { pet: PetsDto; index: number }) => {
                     scaledSize: {
                         width: 35,
                         height: 35,
-                    },
+                    } as google.maps.Size,
                 }}
                 onClick={() => infoPet(index)}
             ></Marker>

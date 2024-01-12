@@ -15,8 +15,8 @@ export const ModalPet = ({ petInfo, id }: { petInfo: PetsDto; id: number }) => {
     useEffect(() => {
         const fetchData = async () => {
             if (session) {
-                const User = session?.user?.user
-                const Token = session?.user.access_token
+                const User = (session as any)?.user?.user
+                const Token = (session as any)?.user?.access_token
 
                 try {
                     const data = await getUser(User._id, Token)
@@ -148,7 +148,7 @@ export const ModalPet = ({ petInfo, id }: { petInfo: PetsDto; id: number }) => {
                             </div>
                         </div>
                         <SubTittle text="Estoy ubicado en:" />
-                        <Paragraph text={position} />
+                        {position && <Paragraph text={position} />}
 
                         <SubTittle text="Informacion de Contacto:" />
                         {infoUser ? (

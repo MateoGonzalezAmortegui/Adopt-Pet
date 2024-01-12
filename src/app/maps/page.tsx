@@ -1,5 +1,5 @@
 import { PetsDto } from "@/interfaces/PetsDto"
-import { GoogleMapView } from "@/pages/maps/GoogleMapView"
+import { GoogleMapView } from "@/templatePages/maps/GoogleMapView"
 import { getAllPets } from "@/services/pets/getAllPets"
 
 export default async function page() {

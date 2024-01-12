@@ -5,8 +5,8 @@ import { ButtonPrimary, ButtonWarning } from "@/components/UI/buttons"
 
 //* Components
 import { AddIcon } from "@/components/icons/Add"
-import { InfoUser } from "@/pages/profile/InfoUser"
-import { InfoPetsTable } from "@/pages/profile/InfoPetsTable"
+import { InfoUser } from "@/templatePages/profile/InfoUser"
+import { InfoPetsTable } from "@/templatePages/profile/InfoPetsTable"
 
 //* Services
 import { deleteUser } from "@/services/users/deleteUser"
@@ -20,8 +20,8 @@ import { TrashIcon } from "@/components/icons/Trash"
 
 export default function Page() {
     const { data: session } = useSession()
-    const User = session?.user?.user
-    const Token = session?.user.access_token
+    const User = (session as any)?.user?.user
+    const Token = (session as any)?.user?.access_token
 
     const router = useRouter()
 

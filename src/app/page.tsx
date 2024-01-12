@@ -1,6 +1,6 @@
-import { Footer } from "@/pages/home/Footer"
-import { Sections } from "@/pages/home/Sections"
-import { Hero } from "@/pages/home/Hero"
+import { Footer } from "@/templatePages/home/Footer"
+import { Sections } from "@/templatePages/home/Sections"
+import { Hero } from "@/templatePages/home/Hero"
 
 export default function Home() {
     return (

@@ -1,6 +1,6 @@
 import { LoadingCard } from "@/components/common/skeletons"
-import { ListPets } from "@/pages/pets/ListPets"
-import { Search } from "@/pages/pets/Search"
+import { ListPets } from "@/templatePages/pets/ListPets"
+import { Search } from "@/templatePages/pets/Search"
 import { Suspense } from "react"
 
 interface UrlProps {

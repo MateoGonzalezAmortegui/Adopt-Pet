@@ -17,7 +17,13 @@ export const CardsPets = ({
 }) => {
     const infoPet = (index: number) => {
         const modal = `modal_${index}`
-        document.getElementById(modal).showModal()
+        const modalElement = document.getElementById(
+            modal
+        ) as HTMLDialogElement | null
+
+        if (modalElement) {
+            modalElement.showModal()
+        }
     }
 
     return (

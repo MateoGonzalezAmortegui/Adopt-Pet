@@ -25,7 +25,7 @@ export const Paragraph: React.FC<TextProps> = ({ className, text }) => {
 
 interface TextFormProps {
     className?: string
-    text: string
+    text: any
 }
 export const ErrorMessage: React.FC<TextFormProps> = ({ className, text }) => {
     return <p className={`font-medium text-red-600 ${className}`}>{text}</p>
