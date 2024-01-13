@@ -11,6 +11,11 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
     title: "Adopt Pet",
     description: "Adopcion de mascotas cerca tuyo!!",
+    keywords: ["adopcion", "mascotas", "gato", "perro"],
+    manifest: "/manifest.json",
+    icons: {
+        apple: "/icon.png",
+    },
 }
 
 export default function RootLayout({
