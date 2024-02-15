@@ -28,7 +28,10 @@ export const GoogleMapView = ({ pets }: { pets: PetsDto[] }) => {
         height: "90vh",
     }
 
-    const [locationInit, setLocationInit] = useState<Location>()
+    const [locationInit, setLocationInit] = useState<Location>({
+        lat: 4.5799821,
+        lng: -74.1595131,
+    })
 
     const getLocation = () => {
         navigator.geolocation.getCurrentPosition((pos) => {

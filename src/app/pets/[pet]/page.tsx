@@ -26,7 +26,13 @@ export default function page({ params, searchParams }: UrlProps) {
             <article className=" pt-3 w-11/12 my-0 mx-auto">
                 <Search />
 
-                <Suspense fallback={<LoadingCard />}>
+                <Suspense
+                    fallback={
+                        <div className="pt-4 pb-80">
+                            <LoadingCard />
+                        </div>
+                    }
+                >
                     <ListPets
                         kindaPets={pet}
                         name={namePet}

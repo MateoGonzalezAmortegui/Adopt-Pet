@@ -22,13 +22,15 @@ export const Search = () => {
     const handleInputChange = (e: any) => {
         const value = e.target.value
         setInputValue(value)
-        if (inputValue.length <= 1) {
+        if (inputValue.length <= 2) {
             handleButtonAll()
         }
     }
 
     const handleButton = () => {
-        router.push(`/pets/all?name=${inputValue}`)
+        if (inputValue.length > 3) {
+            router.push(`/pets/all?name=${inputValue}`)
+        }
     }
 
     const handleButtonPet = (kindaPet: string) => {
@@ -48,7 +50,7 @@ export const Search = () => {
                             type="text"
                             placeholder="Busca por su nombre"
                             value={inputValue}
-                            onChange={() => handleInputChange}
+                            onChange={handleInputChange}
                         />
                         <ButtonPrimary onClick={handleButton}>
                             <SearchIcon className="iconBg" />
