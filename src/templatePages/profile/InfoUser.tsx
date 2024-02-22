@@ -43,7 +43,7 @@ export const InfoUser = ({ User }: { User: UserInfo }) => {
                 </table>
             </div>
             <div className="w-full flex justify-center pt-5">
-                <Link href={`profile/${User._id}`}>
+                <Link href="profile/updateInfo">
                     <ButtonPrimary>
                         <EditIcon className="iconBg" />
                         Editar perfil

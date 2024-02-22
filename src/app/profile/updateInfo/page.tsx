@@ -58,7 +58,7 @@ export default function Page() {
                 <>
                     <Link
                         href="/profile"
-                        className="hidden md:flex"
+                        className="hidden pt-4 md:flex dark:bg-neutral dark:text-white"
                     >
                         ❮ Volver a Mi perfil
                     </Link>
@@ -66,7 +66,7 @@ export default function Page() {
                     <section className="w-full h-screen pb-[44rem] dark:bg-neutral">
                         <Tittle
                             text="Editar Informacion de Usuario"
-                            className="pt-4 text-center"
+                            className="py-4 text-center"
                         />
                         <Info
                             text="Escribe tu misma informacion actual si no la
@@ -74,7 +74,7 @@ export default function Page() {
                         />
 
                         <form
-                            className="w-11/12 my-0 mx-auto grid justify-center items-center pb-28"
+                            className="w-11/12 my-0 mx-auto grid justify-center items-center pb-28 pt-4"
                             onSubmit={onSubmit}
                         >
                             <div className="pt-2">

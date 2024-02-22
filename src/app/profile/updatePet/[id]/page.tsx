@@ -21,14 +21,14 @@ export default function Page() {
         <>
             <Link
                 href="/profile"
-                className="hidden md:flex dark:bg-neutral dark:text-white"
+                className="hidden pt-4 md:flex dark:bg-neutral dark:text-white"
             >
                 ❮ Volver a Mi perfil
             </Link>
             <section className="w-full h-auto pb-[44rem] dark:bg-neutral">
                 <Tittle
                     text="Edita la informacion o imagenes de tu mascota"
-                    className="pt-4 text-center"
+                    className="py-4 text-center"
                 />
 
                 <Suspense fallback={<LoadingPages />}>

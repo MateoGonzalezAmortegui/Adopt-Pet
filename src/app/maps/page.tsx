@@ -4,5 +4,6 @@ import { getAllPets } from "@/services/pets/getAllPets"
 
 export default async function page() {
     let pets: PetsDto[] = await getAllPets()
+
     return <GoogleMapView pets={pets} />
 }

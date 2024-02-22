@@ -3,7 +3,6 @@
 import { LoadScript, GoogleMap, Marker } from "@react-google-maps/api"
 
 //* Components
-import { LoadingPages } from "@/components/common/skeletons"
 import { MarkerPets } from "./MarketPets"
 
 //* React
@@ -23,6 +22,10 @@ export const GoogleMapView = ({ pets }: { pets: PetsDto[] }) => {
         return
     }
 
+    let mapsVar = undefined
+    if (typeof window !== 'undefined') {
+        mapsVar = window.google
+    }
     const mapContainerStyle = {
         width: "100%",
         height: "90vh",
@@ -49,7 +52,23 @@ export const GoogleMapView = ({ pets }: { pets: PetsDto[] }) => {
     return (
         <section>
             <article>
-                {locationInit ? (
+                {mapsVar ? (
+                    <GoogleMap
+                        mapContainerStyle={mapContainerStyle}
+                        center={locationInit}
+                        zoom={14}
+                    >
+                        <Marker position={locationInit}></Marker>
+                        {pets &&
+                            pets?.map((pet, index) => (
+                                <MarkerPets
+                                    pet={pet}
+                                    key={index}
+                                    index={index}
+                                />
+                            ))}
+                    </GoogleMap>
+                ) : (
                     <LoadScript googleMapsApiKey={APIKEY}>
                         <GoogleMap
                             mapContainerStyle={mapContainerStyle}
@@ -67,8 +86,6 @@ export const GoogleMapView = ({ pets }: { pets: PetsDto[] }) => {
                                 ))}
                         </GoogleMap>
                     </LoadScript>
-                ) : (
-                    <LoadingPages />
                 )}
             </article>
         </section>

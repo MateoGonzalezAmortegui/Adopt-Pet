@@ -13,7 +13,7 @@ export default function Page() {
         <>
             <Link
                 href="/profile"
-                className="hidden md:flex dark:bg-neutral dark:text-white"
+                className="hidden pt-4 md:flex dark:bg-neutral dark:text-white"
             >
                 ❮ Volver a Mi perfil
             </Link>
