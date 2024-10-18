@@ -1,8 +1,9 @@
 import { ButtonPrimary } from "@/components/UI/buttons"
-import { SubTittle, Paragraph } from "@/components/UI/texts"
-import Link from "next/link"
+import { Paragraph, SubTittle } from "@/components/UI/texts"
 import Image from "next/image"
-export const ErrorPage = () => {
+import Link from "next/link"
+
+export default function Page() {
     return (
         <section className="pt-4 pb-20 h-screen w-full grid items-center justify-items-center text-center dark:bg-neutral">
             <div>
@@ -14,13 +15,13 @@ export const ErrorPage = () => {
                 />
             </div>
             <Image
-                src="/sadCat.jpeg"
-                alt="error image"
+                src="/loadingCat.jpg"
+                alt="not found image"
                 width="250"
                 height="250"
                 className="rounded-md"
             />
-            <Paragraph text="Parece que hubo un error 🛠️" />
+            <Paragraph text="Esta pagina no existe 🛠️" />
             <Link href="/">
                 <ButtonPrimary>Volver al Home!</ButtonPrimary>
             </Link>

@@ -30,7 +30,7 @@ export const CardsPets = ({
         <section>
             <article>
                 <div
-                    className="card bg-base-100 shadow-xl shadow-gray-400 cursor-pointer hover:shadow-primary dark:bg-gray-700  "
+                    className="card bg-base-100 shadow-xl shadow-gray-400 cursor-pointer hover:shadow-primary dark:bg-gray-700  min-h-[500px] max-h-[500px] "
                     onClick={() => infoPet(id)}
                 >
                     <figure>

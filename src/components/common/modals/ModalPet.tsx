@@ -10,7 +10,7 @@ import { useEffect, useState } from "react"
 export const ModalPet = ({ petInfo, id }: { petInfo: PetsDto; id: number }) => {
     const { data: session } = useSession()
     const [infoUser, setInfoUser] = useState<any>(null)
-    const [position, setPosition] = useState<string | null>(null)
+    // const [position, setPosition] = useState<string | null>(null)
 
     useEffect(() => {
         const fetchData = async () => {
@@ -25,7 +25,7 @@ export const ModalPet = ({ petInfo, id }: { petInfo: PetsDto; id: number }) => {
                 }
             }
 
-            try {
+            /*  try {
                 const loc = await getLocation(
                     petInfo.latitude,
                     petInfo.longitude
@@ -33,7 +33,7 @@ export const ModalPet = ({ petInfo, id }: { petInfo: PetsDto; id: number }) => {
                 setPosition(loc)
             } catch (error) {
                 console.error("Error fetching location data", error)
-            }
+            } */
         }
 
         fetchData()
@@ -146,8 +146,13 @@ export const ModalPet = ({ petInfo, id }: { petInfo: PetsDto; id: number }) => {
                                 {petInfo.breed}
                             </div>
                         </div>
+                        {/*
                         <SubTittle text="Estoy ubicado en:" />
-                        {position && <Paragraph text={position} />}
+                         {position ? (
+                            <Paragraph text={position} />
+                        ) : (
+                            <Paragraph text="Cargando datos.." />
+                        )} */}
 
                         <SubTittle text="Informacion de Contacto:" />
                         {infoUser ? (

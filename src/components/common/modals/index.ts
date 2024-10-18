@@ -1,2 +1,3 @@
-import { ModalPet } from "./ModalPet"
-import { ModalLoading } from "./ModalLoading"
+export { ModalPet } from "./ModalPet"
+export { ModalLoading } from "./ModalLoading"
+export { ModalPortal } from "./PortalModal"
